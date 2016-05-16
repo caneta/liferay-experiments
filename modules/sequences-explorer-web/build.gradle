@@ -1,0 +1,61 @@
+buildscript {
+	dependencies {
+		classpath group: "com.liferay", name: "com.liferay.gradle.plugins.workspace", version: "1.0.29"
+	}
+
+	repositories {
+		maven {
+			url "http://cdn.repository.liferay.com/nexus/content/groups/public"
+		}
+	}
+}
+
+import com.liferay.gradle.plugins.node.tasks.DownloadNodeModuleTask
+import com.liferay.gradle.plugins.node.tasks.ExecuteNodeTask
+
+dependencies {
+	compile  group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+	compile  group: "javax.portlet", name: "portlet-api", version: "2.0"
+	compile  group: "javax.servlet", name: "servlet-api", version: "2.5"
+	compile  group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
+}
+
+ext {
+	bowerVersion = "1.7.9"
+}
+
+liferay {
+	deployDir = file("${liferayHome}/osgi/modules")
+}
+
+/* task downloadBower(type: DownloadNodeModuleTask) */
+/* task bowerInstall(type: ExecuteNodeTask) */
+/* task dragulaInstall(type: Copy) */
+
+/* bowerInstall { */
+/* 	args = [new File(node.nodeDir, "../../node_modules/bower/bin/bower"), "install", "--allow-root"] */
+/* 	dependsOn downloadBower */
+/* } */
+
+configJSModules {
+	/* dependsOn dragulaInstall */
+	/* sourceDir "classes/META-INF/resources" */
+	include "**/*.js"
+}
+
+/* npmInstall { */
+/* 	dependsOn bowerInstall */
+/* } */
+
+/* downloadBower { */
+/* 	moduleName = "bower" */
+/* 	moduleVersion = bowerVersion */
+/* } */
+
+/* dragulaInstall { */
+/* 	dependsOn bowerInstall */
+
+/* 	from new File("bower_components/dragula.js/dist/dragula.min.js") */
+/* 	into file("classes/META-INF/resources") */
+/* 	/1* into file("${buildDir}/resources/main/META-INF/resources/") *1/ */
+/* } */

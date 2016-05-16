@@ -1,0 +1,6 @@
+Bundle-Name: ES6 Numeric Sequences
+Bundle-SymbolicName: frontend.js.numsequences.web
+Bundle-Version: 1.0.0
+Liferay-JS-Config: /META-INF/resources/config.js
+Web-ContextPath: /js-numsequences
+Include-Resource: package.json, bower.json

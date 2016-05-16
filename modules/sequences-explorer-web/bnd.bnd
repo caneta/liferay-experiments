@@ -1,0 +1,6 @@
+Bundle-Name: Sequences Explorer Web
+Bundle-SymbolicName: sequences.explorer.web
+Bundle-Version: 1.0.0
+Liferay-JS-Config: /META-INF/resources/js/config.js
+Web-ContextPath: /sequences-explorer
+Include-Resource: package.json, bower.json
