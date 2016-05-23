@@ -1,2 +1,2 @@
 # liferay-experiments
-Experiments with Liferay Portal
+Experiments with Liferay 7 Portal
