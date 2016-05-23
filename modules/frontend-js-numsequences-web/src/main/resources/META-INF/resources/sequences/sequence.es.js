@@ -1,8 +1,5 @@
 'use strict';
 
-
-// import _babelPolyfill from 'polyfill-babel';
-// import _babelPolyfill from 'com.liferay.frontend.js.polyfill.babel.web';
 import polyfillBabel from 'polyfill-babel';
 
 class Sequence {

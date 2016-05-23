@@ -3,7 +3,7 @@
 <div id="<portlet:namespace />Sequences"></div>
 
 <aui:script require="sequences-explorer/js/printer.es">
-	var SequencesPrinter = sequencesExplorerJsPrinterEs;
+	var SequencesPrinter = sequencesExplorerJsPrinterEs.default;
 
 	var sequencesContainer = $('#<portlet:namespace />Sequences')[0];
 
