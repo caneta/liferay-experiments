@@ -1,0 +1,16 @@
+{
+  "name": "loadcharts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alessandro Candini",
+  "license": "ISC",
+  "devDependencies": {
+    "amcharts": "^3.14.5",
+    "liferay-amd-loader": "^1.5.5",
+    "node-static": "^0.7.9"
+  }
+}

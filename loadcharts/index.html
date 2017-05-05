@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Load AmCharts with Liferay AMD Loader</title>
+</head>
+<body>
+  Load AmCharts with Liferay AMD Loader
+  <script charset="utf-8" type="text/javascript" src="config.js"></script>
+  <script charset="utf-8" type="text/javascript" src="node_modules/liferay-amd-loader/dist/loader.js"></script>
+  <script charset="utf-8" type="text/javascript">
+
+    Loader.addModule({
+      name        : 'amcharts',
+      anonymous   : true,
+      dependencies: [],
+      exports     : 'window.AmCharts',
+      path        : '/node_modules/amcharts/dist/amcharts/amcharts',
+    });
+
+    Loader.addModule({
+      name        : 'pie',
+      anonymous   : true,
+      dependencies: ['amcharts'],
+      exports     : 'window.AmCharts.AmPieChart',
+      path        : 'node_modules/amcharts/dist/amcharts/pie'
+    });
+
+    Loader.require(['amcharts'],
+      function (amcharts) {
+        Loader.require(['pie'],
+          function (pie) {
+            console.info('=== Loading amcharts and then pie')
+            console.log(window.AmCharts);
+            console.log(window.AmCharts.AmPieChart);
+          },
+          function (error) {
+            console.error(error);
+        }); // require()
+      },
+      function (error) {
+        console.error(error);
+    }); // require()
+
+    Loader.require(['pie'],
+      function (pie) {
+        console.info('=== Loading pie only')
+        console.log(window.AmCharts);
+        console.log(window.AmCharts.AmPieChart);
+      },
+      function (error) {
+        console.error(error);
+    }); // require()
+  </script>
+</body>
+</html>
