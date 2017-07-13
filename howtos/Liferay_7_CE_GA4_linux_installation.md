@@ -45,24 +45,14 @@
     systemProp.https.nonProxyHosts=localhost
     ```
 
-6. Update Java Cryptography Extension, in order to download from https sourceforge ([issue here](https://web.liferay.com/community/forums/-/message_boards/view_message/85739563#_19_message_86861808))
-    * Download [JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html)
-    * Unzip it and overwrite policies
-        ```
-        unzip jce_policy-8.zip
-        cd /opt/jdk/jdk1.8.0_131/jre/lib/security
-        mv -v local_policy.jar local_policy.jar.orig
-        mv -v US_export_policy.jar US_export_policy.jar.orig
-        cd -
-        cp -v UnlimitedJCEPolicyJDK8/local_policy.jar /opt/jdk/jdk1.8.0_131/jre/lib/security
-        cp -v UnlimitedJCEPolicyJDK8/US_export_policy.jar /opt/jdk/jdk1.8.0_131/jre/lib/security
-        ```
-
-7. Add bundle variables in _liferay-workspace/gradle.properties_
+6. Add bundle variables in _liferay-workspace/gradle.properties_
     ```
-    liferay.workspace.bundle.url=https://sourceforge.net/projects/lportal/files/Liferay\ Portal/7.0.3i\ GA4/liferay-ce-portal-tomcat-7.0-ga4-20170613175008905.zip
+    liferay.workspace.bundle.url=https://cdn.lfrs.sl/releases.liferay.com/portal/7.0.3-ga4/liferay-ce-portal-tomcat-7.0-ga4-20170613175008905.zip
     liferay.workspace.home.dir=../liferay-ce-portal-7.0-ga4/
     ```
+
+7. Open _liferay-workspace/settings.gradle_ file and change _com.liferay.gradle.plugins.workspace_ version number to **1.5.0** ([issue IDE-3084](https://issues.liferay.com/browse/IDE-3084))
+
 
 8. Initialize a Liferay 7 bundle
     ```
